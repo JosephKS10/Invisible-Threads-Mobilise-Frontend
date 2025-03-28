@@ -1,37 +1,54 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const HomelessnessPage = () => {
+  const [showTable1, setShowTable1] = useState(false);
+  const [showTable2, setShowTable2] = useState(false);
+  const [showTable3, setShowTable3] = useState(false);
+
+  // Gen-Z friendly color palette for dark mode
+  const colors = {
+    primary: '#6366f1',  // Vibrant purple
+    secondary: '#ec4899', // Pink
+    accent: '#3b82f6',   // Blue
+    highlight: '#10b981', // Emerald
+    neutral: '#f59e0b',  // Amber
+    dark: '#1e293b',
+    light: '#f8fafc',
+    muted: '#cbd5e1'
+  };
+
   // Chart 1: Counts by sex (2006-2021)
   const chart1Options = {
     chart: {
       type: 'line',
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
         fontFamily: 'sans-serif',
       },
     },
     title: {
-      text: 'Counts of people experiencing homelessness by sex, Australia, 2006 to 2021',
+      text: 'Homelessness by Gender (2006-2021)',
       style: {
-        color: '#f8fafc',
+        color: colors.light,
+        fontSize: '18px'
       },
     },
     xAxis: {
       categories: ['2006', '2011', '2016', '2021'],
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       title: {
         text: 'Census year',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
     },
@@ -39,43 +56,43 @@ const HomelessnessPage = () => {
       title: {
         text: 'Counts of people',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       gridLineColor: '#334155',
     },
     legend: {
       itemStyle: {
-        color: '#cbd5e1',
+        color: colors.muted,
       },
     },
     series: [
       {
         name: 'Male',
         data: [63000, 65000, 67449, 68516],
-        color: '#60a5fa',
+        color: colors.primary,
       },
       {
         name: 'Female',
         data: [45000, 48000, 49000, 53974],
-        color: '#f472b6',
+        color: colors.secondary,
       },
       {
         name: 'Total',
         data: [108000, 113000, 116427, 122494],
-        color: '#86efac',
+        color: colors.highlight,
         dashStyle: 'Dash',
       },
     ],
     tooltip: {
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
-        color: '#f8fafc',
+        color: colors.light,
       },
     },
     plotOptions: {
@@ -91,28 +108,29 @@ const HomelessnessPage = () => {
   const chart2Options = {
     chart: {
       type: 'column',
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
         fontFamily: 'sans-serif',
       },
     },
     title: {
-      text: 'Counts of people experiencing homelessness by homeless operational group, Australia, 2006 to 2021',
+      text: 'Homelessness by Living Situation (2006-2021)',
       style: {
-        color: '#f8fafc',
+        color: colors.light,
+        fontSize: '18px'
       },
     },
     xAxis: {
       categories: ['2006', '2011', '2016', '2021'],
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       title: {
         text: 'Census year',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
     },
@@ -120,57 +138,57 @@ const HomelessnessPage = () => {
       title: {
         text: 'Counts of people',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       gridLineColor: '#334155',
     },
     legend: {
       itemStyle: {
-        color: '#cbd5e1',
+        color: colors.muted,
       },
     },
     series: [
       {
-        name: 'Improvised dwellings, tents, sleeping out',
+        name: 'Improvised dwellings',
         data: [7000, 8000, 8100, 7500],
-        color: '#60a5fa',
+        color: colors.primary,
       },
       {
         name: 'Supported accommodation',
         data: [21000, 22000, 21000, 24000],
-        color: '#f472b6',
+        color: colors.secondary,
       },
       {
-        name: 'Staying temporarily with other households',
+        name: 'Staying with others',
         data: [15000, 16000, 17000, 18000],
-        color: '#86efac',
+        color: colors.accent,
       },
       {
         name: 'Boarding houses',
         data: [18000, 19000, 17000, 22000],
-        color: '#f59e0b',
+        color: colors.highlight,
       },
       {
-        name: 'Other temporary lodging',
+        name: 'Other lodging',
         data: [5000, 6000, 7000, 8000],
-        color: '#a78bfa',
+        color: colors.neutral,
       },
       {
-        name: 'Severely crowded dwellings',
+        name: 'Severely crowded',
         data: [42000, 44000, 47000, 48000],
         color: '#f97316',
       },
     ],
     tooltip: {
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
-        color: '#f8fafc',
+        color: colors.light,
       },
     },
     plotOptions: {
@@ -184,28 +202,29 @@ const HomelessnessPage = () => {
   const chart3Options = {
     chart: {
       type: 'column',
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
         fontFamily: 'sans-serif',
       },
     },
     title: {
-      text: 'Counts of people experiencing homelessness by age and homeless operational group, 2021',
+      text: 'Homelessness by Age Group (2021)',
       style: {
-        color: '#f8fafc',
+        color: colors.light,
+        fontSize: '18px'
       },
     },
     xAxis: {
       categories: Array.from({ length: 25 }, (_, i) => i * 3),
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       title: {
         text: 'Age (years)',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
     },
@@ -213,72 +232,107 @@ const HomelessnessPage = () => {
       title: {
         text: 'Counts of people',
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       labels: {
         style: {
-          color: '#cbd5e1',
+          color: colors.muted,
         },
       },
       gridLineColor: '#334155',
     },
     legend: {
       itemStyle: {
-        color: '#cbd5e1',
+        color: colors.muted,
       },
     },
     series: [
       {
-        name: 'Improvised dwellings, tents, sleeping out',
+        name: 'Improvised dwellings',
         data: generateRandomData(25, 200, 400),
-        color: '#60a5fa',
+        color: colors.primary,
       },
       {
         name: 'Supported accommodation',
         data: generateRandomData(25, 300, 600),
-        color: '#f472b6',
+        color: colors.secondary,
       },
       {
-        name: 'Staying temporarily with other households',
+        name: 'Staying with others',
         data: generateRandomData(25, 400, 800),
-        color: '#86efac',
+        color: colors.accent,
       },
       {
         name: 'Boarding houses',
         data: generateRandomData(25, 200, 500),
-        color: '#f59e0b',
+        color: colors.highlight,
       },
       {
-        name: 'Other temporary lodging',
+        name: 'Other lodging',
         data: generateRandomData(25, 100, 300),
-        color: '#a78bfa',
+        color: colors.neutral,
       },
       {
-        name: 'Severely crowded dwellings',
+        name: 'Severely crowded',
         data: generateRandomData(25, 500, 1000),
         color: '#f97316',
       },
     ],
     tooltip: {
-      backgroundColor: '#1e293b',
+      backgroundColor: colors.dark,
       style: {
-        color: '#f8fafc',
+        color: colors.light,
       },
     },
   };
 
-  function generateRandomData(count:any, min:any, max:any) {
+  // Table data for each chart
+  const table1Data = [
+    { year: '2006', male: 63000, female: 45000, total: 108000 },
+    { year: '2011', male: 65000, female: 48000, total: 113000 },
+    { year: '2016', male: 67449, female: 49000, total: 116427 },
+    { year: '2021', male: 68516, female: 53974, total: 122494 }
+  ];
+
+  const table2Data = [
+    { year: '2006', improvised: 7000, supported: 21000, staying: 15000, boarding: 18000, other: 5000, crowded: 42000 },
+    { year: '2011', improvised: 8000, supported: 22000, staying: 16000, boarding: 19000, other: 6000, crowded: 44000 },
+    { year: '2016', improvised: 8100, supported: 21000, staying: 17000, boarding: 17000, other: 7000, crowded: 47000 },
+    { year: '2021', improvised: 7500, supported: 24000, staying: 18000, boarding: 22000, other: 8000, crowded: 48000 }
+  ];
+
+  function generateRandomData(count: number, min: number, max: number) {
     return Array.from({ length: count }, () =>
       Math.floor(Math.random() * (max - min + 1) + min)
     );
   }
 
+  // Toggle button component
+  const ToggleButton = ({ showTable, setShowTable }: { showTable: boolean, setShowTable: (value: boolean) => void }) => (
+    <button 
+      onClick={() => setShowTable(!showTable)}
+      style={{
+        backgroundColor: colors.primary,
+        color: 'white',
+        border: 'none',
+        padding: '8px 16px',
+        borderRadius: '20px',
+        cursor: 'pointer',
+        marginBottom: '16px',
+        fontWeight: 'bold',
+        fontSize: '14px'
+      }}
+    >
+      {showTable ? 'Show Chart' : 'Show Table'}
+    </button>
+  );
+
   return (
     <div style={{
       minHeight: '100vh',
       backgroundColor: '#0f172a',
-      color: '#f8fafc',
+      color: colors.light,
       padding: '24px',
       fontFamily: 'sans-serif',
       paddingTop: '100px'
@@ -288,216 +342,186 @@ const HomelessnessPage = () => {
       </Head>
 
       <main style={{
-        maxWidth: '1200px',
+        maxWidth: '800px',  // Reduced width for better readability
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        gap: '32px'
+        gap: '24px'
       }}>
         <h1 style={{
-          fontSize: '30px',
+          fontSize: '28px',
           fontWeight: 'bold',
-          marginBottom: '24px'
-        }}>Overview</h1>
+          marginBottom: '16px',
+          color: colors.primary
+        }}>Homelessness in Australia</h1>
 
         <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
+          backgroundColor: colors.dark,
+          padding: '20px',
+          borderRadius: '12px'
         }}>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            122,494 people were estimated to be experiencing homelessness at the time of the 2021 Census, an increase of 6,067 people (5.2%) since 2016. The rate of homelessness decreased to 48 people per 10,000, from 50 in 2016.
+          <p style={{ marginBottom: '12px', lineHeight: '1.5' }}>
+            In 2021, <strong>122,494 people</strong> were experiencing homelessness in Australia - a <strong>5.2% increase</strong> since 2016.
           </p>
 
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Of those experiencing homelessness in 2021:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
-            marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <li>68,516 (55.9%) were male, an increase of 1.6% from 2016</li>
-            <li>53,974 (44.1%) were female, an increase of 10.1% from 2016.</li>
-          </ul>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Females accounted for 81.7% of the 6,067 increase of people experiencing homelessness in 2021.
-          </p>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            The rate of homelessness for males decreased in 2021 to 55 males per 10,000 (from 58 in 2016), while the rate for females increased in 2021 to 42 females per 10,000 (from 41 in 2016).
-          </p>
+          <div style={{ display: 'flex', gap: '20px', marginBottom: '12px' }}>
+            <div>
+              <h3 style={{ color: colors.primary, marginBottom: '8px' }}>By Gender</h3>
+              <ul style={{
+                listStyleType: 'none',
+                paddingLeft: '0',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px'
+              }}>
+                <li>♂ 68,516 (55.9%) male</li>
+                <li>♀ 53,974 (44.1%) female</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style={{ color: colors.primary, marginBottom: '8px' }}>By Living Situation</h3>
+              <ul style={{
+                listStyleType: 'none',
+                paddingLeft: '0',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px'
+              }}>
+                <li>39.1% in crowded dwellings</li>
+                <li>19.8% in supported accommodation</li>
+                <li>18.1% in boarding houses</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
+        {/* Chart 1 Section */}
         <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
+          backgroundColor: colors.dark,
+          padding: '20px',
+          borderRadius: '12px'
         }}>
-          <HighchartsReact highcharts={Highcharts} options={chart1Options} />
+          <ToggleButton showTable={showTable1} setShowTable={setShowTable1} />
+          {showTable1 ? (
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ backgroundColor: '#334155' }}>
+                    <th style={{ padding: '10px', textAlign: 'left', borderBottom: `1px solid ${colors.muted}` }}>Year</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Male</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Female</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {table1Data.map((row, index) => (
+                    <tr key={index} style={{ borderBottom: `1px solid ${colors.muted}` }}>
+                      <td style={{ padding: '10px' }}>{row.year}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.male.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.female.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.total.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <HighchartsReact highcharts={Highcharts} options={chart1Options} />
+          )}
         </div>
 
+        {/* Chart 2 Section */}
         <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
+          backgroundColor: colors.dark,
+          padding: '20px',
+          borderRadius: '12px'
         }}>
-          <h2 style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            marginBottom: '16px'
-          }}>Homeless operational groups</h2>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            The ABS uses six operational groups for presenting estimates of people experiencing homelessness on Census night. These groups are:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
-            marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <li>people living in improvised dwellings, tents or sleeping out</li>
-            <li>people living in supported accommodation for the homeless</li>
-            <li>people staying temporarily with other households</li>
-            <li>people living in boarding houses</li>
-            <li>people in other temporary lodgings</li>
-            <li>people living in 'severely' crowded dwellings.</li>
-          </ul>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            The ABS also compiles estimates from Census data for the following three groups of people who may be marginally housed but are not classified as homeless:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
-            marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <li>people living in other crowded dwellings</li>
-            <li>people in other improvised dwellings</li>
-            <li>people marginally housed in caravan parks.</li>
-          </ul>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Of the 122,494 people experiencing homelessness in Australia in 2021:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
-            marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <li>Two in five (39.1%) were living in 'severely' crowded dwellings</li>
-            <li>One in five (19.8%) were in supported accommodation for the homeless</li>
-            <li>One in six (18.1%) living in boarding houses.</li>
-          </ul>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Between 2016 and 2021, there was a:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
-            marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <li>26.5% increase in people living in boarding houses</li>
-            <li>14.4% increase in people in supported accommodation for the homeless</li>
-            <li>6.9% decrease in people living in improvised dwellings, tents, or sleeping out</li>
-            <li>6.3% decrease to living in 'severely' crowded dwellings.</li>
-          </ul>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            The decrease in people living in improvised dwellings, tents, or sleeping out and the increase in people in other temporary lodgings may be partly associated with measures put in place by local and state governments in response to COVID-19. The increases in people living in boarding houses and people in other temporary lodging are also partly associated with improvements in data quality through greater use of administrative data.
-          </p>
+          <ToggleButton showTable={showTable2} setShowTable={setShowTable2} />
+          {showTable2 ? (
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ backgroundColor: '#334155' }}>
+                    <th style={{ padding: '10px', textAlign: 'left', borderBottom: `1px solid ${colors.muted}` }}>Year</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Improvised</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Supported</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Staying</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Boarding</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Other</th>
+                    <th style={{ padding: '10px', textAlign: 'right', borderBottom: `1px solid ${colors.muted}` }}>Crowded</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {table2Data.map((row, index) => (
+                    <tr key={index} style={{ borderBottom: `1px solid ${colors.muted}` }}>
+                      <td style={{ padding: '10px' }}>{row.year}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.improvised.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.supported.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.staying.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.boarding.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.other.toLocaleString()}</td>
+                      <td style={{ padding: '10px', textAlign: 'right' }}>{row.crowded.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <HighchartsReact highcharts={Highcharts} options={chart2Options} />
+          )}
         </div>
 
+        {/* Chart 3 Section */}
         <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
-        }}>
-          <HighchartsReact highcharts={Highcharts} options={chart2Options} />
-        </div>
-
-        <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
+          backgroundColor: colors.dark,
+          padding: '20px',
+          borderRadius: '12px'
         }}>
           <h2 style={{
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 'bold',
-            marginBottom: '16px'
-          }}>Age</h2>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            The age groups presented in this release support analysis and reporting of some key cohorts for service delivery and policy responses to reduce the incidence of homelessness. These include children aged under 12 years, young people aged from 12 to 18 years and aged from 19 to 24 years.
-          </p>
-
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Of the 122,494 people experiencing homelessness in 2021:
-          </p>
-
-          <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '24px',
             marginBottom: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
+            color: colors.primary
+          }}>Age Distribution (2021)</h2>
+          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
+            Key age groups experiencing homelessness:
+          </p>
+          <ul style={{
+            listStyleType: 'none',
+            paddingLeft: '0',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+            gap: '12px',
+            marginBottom: '16px'
           }}>
-            <li>25,504 (20.8%) were aged from 25 to 34 years</li>
-            <li>17,646 (14.4%) were aged under 12 years</li>
-            <li>17,085 (13.9%) were aged from 35 to 44 years.</li>
+            <li>👶 <strong>17,646</strong> under 12 years</li>
+            <li>🧒 <strong>25,504</strong> 25-34 years</li>
+            <li>🧑 <strong>17,085</strong> 35-44 years</li>
           </ul>
+          <ToggleButton showTable={showTable3} setShowTable={setShowTable3} />
+          {showTable3 ? (
+            <div style={{ overflowX: 'auto' }}>
+              <p style={{ color: colors.muted, marginBottom: '12px' }}>
+                Age distribution data available in detailed reports
+              </p>
+            </div>
+          ) : (
+            <HighchartsReact highcharts={Highcharts} options={chart3Options} />
+          )}
         </div>
 
         <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px'
-        }}>
-          <HighchartsReact highcharts={Highcharts} options={chart3Options} />
-        </div>
-
-        <div style={{
-          backgroundColor: '#1e293b',
-          padding: '24px',
-          borderRadius: '8px',
+          backgroundColor: colors.dark,
+          padding: '20px',
+          borderRadius: '12px',
           fontSize: '14px',
-          color: '#cbd5e1'
+          color: colors.muted
         }}>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            Please note that there are small random adjustments made to all cell values to protect the confidentiality of data. These adjustments may cause the sum of rows or columns to differ by small amounts from table totals.
+          <p style={{ marginBottom: '12px', lineHeight: '1.5' }}>
+            <small>Note: Data includes small random adjustments to protect confidentiality.</small>
           </p>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            a. Categories are mutually exclusive; therefore, people will only appear in one category.
-          </p>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            b. Data for 2021 is not directly comparable with previous Censuses due to improvements in data quality through greater use of administrative data.
-          </p>
-          <p style={{ marginBottom: '16px', lineHeight: '1.5' }}>
-            c. Usual residents in dwellings needing 4 or more extra bedrooms under the Canadian National Occupancy Standard (CNOS).
-          </p>
-          <p style={{ marginTop: '16px', marginBottom: '16px', lineHeight: '1.5' }}>
-            Source: Census of Population and Housing 2006, 2011, 2016, 2021.
+          <p style={{ marginBottom: '12px', lineHeight: '1.5' }}>
+            <small>Source: Census of Population and Housing 2006-2021</small>
           </p>
         </div>
       </main>
