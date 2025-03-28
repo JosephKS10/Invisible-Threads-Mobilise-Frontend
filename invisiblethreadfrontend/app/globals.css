@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "preline/variants.css";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply bg-black text-white;
+  color: var(--primary-color);
+}
+
+:root {
+  --primary-color: #ff0;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;      /* Firefox */
+}
+
