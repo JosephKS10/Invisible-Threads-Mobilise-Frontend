@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PrelineScriptWrapper from "./components/ PrelineScriptWrapper";
 import Navbar from "./components/Navbar";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <Script
+          src="https://www.paypal.com/sdk/js?client-id=ARPbkcqWNFHo68v7FPeRIAhV0SR0G5rhBsUZZgmMoUtTbXQ7pOU2x8EV-wJkiyr8GzIsyIGlFwz-ziJn&currency=AUD"
+          strategy="beforeInteractive"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         {children}
       </body>
-      <PrelineScriptWrapper/>
+      <PrelineScriptWrapper />
     </html>
   );
 }

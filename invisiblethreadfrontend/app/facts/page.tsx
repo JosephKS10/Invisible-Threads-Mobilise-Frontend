@@ -12,12 +12,12 @@ const HomelessnessPage = () => {
 
   // Gen-Z friendly color palette for dark mode
   const colors = {
-    primary: '#6366f1',  // Vibrant purple
+    primary: '#FFFF00',  // Vibrant purple
     secondary: '#ec4899', // Pink
     accent: '#3b82f6',   // Blue
     highlight: '#10b981', // Emerald
     neutral: '#f59e0b',  // Amber
-    dark: '#1e293b',
+    dark: '#1e1e1e',
     light: '#f8fafc',
     muted: '#cbd5e1'
   };
@@ -314,7 +314,7 @@ const HomelessnessPage = () => {
       onClick={() => setShowTable(!showTable)}
       style={{
         backgroundColor: colors.primary,
-        color: 'white',
+        color: 'black',
         border: 'none',
         padding: '8px 16px',
         borderRadius: '20px',
@@ -331,7 +331,7 @@ const HomelessnessPage = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0f172a',
+      backgroundColor: '#000000',
       color: colors.light,
       padding: '24px',
       fontFamily: 'sans-serif',

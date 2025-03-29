@@ -15,13 +15,12 @@ const page = () => {
     </h1>
     <div className="max-w-4xl">
       <p className="mt-5 text-neutral-400 text-lg">
-        It is a creative hub where imagination meets craftsmanship to transform ideas into tangible realities. At Preline Agency, we specialize in turning conceptual visions into concrete forms, whether it be through design, artistry, or technological innovation.
+      At Invisible Threads, we believe everyone deserves a safe place to call home. Your donation helps provide shelter, warm meals, and essential support to those experiencing homelessness. Together, we can turn compassion into action and bring hope to those in need.
       </p>
     </div>
   </div>
 </div>
 {/* End Hero */}
-<InfiniteSliderBasic/>
 <SmoothScrollHero/>
 {/* Clients */}
 {/* <div className="relative overflow-hidden pt-4 bg-neutral-900">
