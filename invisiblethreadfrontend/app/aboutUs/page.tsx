@@ -1,9 +1,10 @@
+import { AnimatedListDemo } from '@/components/AnimatedListDemo'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-        {/* Team */}
+        {/* Team<AnimatedListDemo/> */}
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   {/* Title */}
   <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -53,7 +54,7 @@ const page = () => {
     {/* End Col */}
 
     <div className="text-center">
-      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://i.ibb.co/W4qbVgLc/Screenshot-2025-03-28-at-8-57-19-PM.png" alt="Avatar" />
       <div className="mt-2 sm:mt-4">
         <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
           Gaurav Myana
