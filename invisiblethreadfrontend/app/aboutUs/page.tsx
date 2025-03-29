@@ -1,4 +1,4 @@
-import { AnimatedListDemo } from '@/components/AnimatedListDemo'
+import Image from 'next/image'
 import React from 'react'
 
 const page = () => {
@@ -15,7 +15,7 @@ const page = () => {
   {/* Grid */}
   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
     <div className="text-center">
-      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/119341956?v=4" alt="Avatar" />
+      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/119341956?v=4" alt="Avatar" />
       <div className="mt-2 sm:mt-4">
         <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
           Ayush Indapure
@@ -28,7 +28,7 @@ const page = () => {
     {/* End Col */}
 
     <div className="text-center">
-      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/77894439?v=4" alt="Avatar" />
+      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/77894439?v=4" alt="Avatar" />
       <div className="mt-2 sm:mt-4">
         <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
           Joseph Joestar
@@ -41,7 +41,7 @@ const page = () => {
     {/* End Col */}
 
     <div className="text-center">
-      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/62185049?v=4" alt="Avatar" />
+      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/62185049?v=4" alt="Avatar" />
       <div className="mt-2 sm:mt-4">
         <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
           Parth Vaghela
@@ -54,7 +54,7 @@ const page = () => {
     {/* End Col */}
 
     <div className="text-center">
-      <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://i.ibb.co/W4qbVgLc/Screenshot-2025-03-28-at-8-57-19-PM.png" alt="Avatar" />
+      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://i.ibb.co/W4qbVgLc/Screenshot-2025-03-28-at-8-57-19-PM.png" alt="Avatar" />
       <div className="mt-2 sm:mt-4">
         <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
           Gaurav Myana
