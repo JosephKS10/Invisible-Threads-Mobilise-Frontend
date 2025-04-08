@@ -166,12 +166,12 @@ export default function HomelessModelPopover({ position, onClose }: HomelessMode
 
 
     return (
-        <div className="fixed right-32 top-1/2 transform -translate-y-1/2 bg-neutral-900 p-4 rounded-xl shadow-lg w-[420px] z-50" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed sm:right-32 sm:top-1/2 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md  p-4 rounded-xl shadow-lg w-[420px] z-50" onClick={(e) => e.stopPropagation()}>
             <button onClick={onClose} className="absolute top-2 right-2 text-black text-lg">
                 <X className="text-white" />
             </button>
             <h3 className="text-center mt-1 mb-2">Chat</h3>
-            <div ref={chatRef} className="h-[400px] overflow-y-auto p-3 bg-neutral-900 rounded-md text-sm">
+            <div ref={chatRef} className="h-[400px] overflow-y-auto p-3 bg-white/30 backdrop-blur-md  rounded-md text-sm">
                 {messages.map((msg) => (
                     <div key={msg.id} className={`flex flex-col ${msg.sender === "You" ? "items-end" : "items-start"} mb-3`}>
                         <div className={`px-4 py-2 rounded-lg max-w-[80%] ${msg.sender === "You" ? "bg-[#FFFF00] text-black" : "bg-neutral-800 text-white"}`}>

@@ -1,75 +1,65 @@
 import Image from 'next/image'
 import React from 'react'
 
+
 const page = () => {
   return (
     <div>
         {/* Team<AnimatedListDemo/> */}
-<div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  {/* Title */}
-  <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-    <h2 className="text-2xl pt-5 font-bold md:text-4xl md:leading-tight">Our Team</h2>
+        <section className="text-neutral-300 body-font">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="flex flex-col text-center w-full mb-20">
+      <h1 className="text-2xl font-medium title-font mb-4 text-[#FFF000]">OUR TEAM</h1>
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+    </div>
+    <div className="flex flex-wrap -m-4">
+      <div className="p-4 lg:w-1/4 md:w-1/2">
+        <div className="h-full flex flex-col items-center text-center">
+          <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="/josephavatar.jpeg" />
+          <div className="w-full">
+            <h2 className="title-font font-medium text-lg text-[#FFF000]">Joseph Saji</h2>
+            <h3 className="text-neutral-400 mb-3  ">Backend Developer</h3>
+            <p className="mb-4">Ambition drives us, but at our core, I'm just pretty simple person</p>
+
+          </div>
+        </div>
+      </div>
+      <div className="p-4 lg:w-1/4 md:w-1/2">
+        <div className="h-full flex flex-col items-center text-center">
+          <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src='/hacki.jpg' />
+          <div className="w-full">
+            <h2 className="title-font font-medium text-lg text-[#FFF000]">Ayush Indapure</h2>
+            <h3 className="text-neutral-400 mb-3  ">Frontend Developer</h3>
+            <p className="mb-4">I love desiging and developing web apps, but apart from that, I love reviewing websites on <a href='https://www.awwwards.com/'> Awwwards </a> </p>
+
+          </div>
+        </div>
+      </div>
+      <div className="p-4 lg:w-1/4 md:w-1/2">
+        <div className="h-full flex flex-col items-center text-center">
+          <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="/parthavatar.jpeg" />
+          <div className="w-full">
+            <h2 className="title-font font-medium text-lg text-[#FFF000]">Parth Vaghela</h2>
+            <h3 className="text-neutral-400 mb-3  ">Backend Developer</h3>
+            <p className="mb-4">My friends think I'm an extrovert, but deep down I know I'm just a 'commit' to my introverted side(MERN)</p>
+
+          </div>
+        </div>
+      </div>
+      <div className="p-4 lg:w-1/4 md:w-1/2">
+        <div className="h-full flex flex-col items-center text-center">
+          <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-top mb-4 mask-radial-at-top"  src="/Gaurav.png" />
+          <div className="w-full">
+            <h2 className="title-font font-medium text-lg text-[#FFF000]">Gaurav Myana</h2>
+            <h3 className="text-neutral-400 mb-3  ">Full Stack (support)</h3>
+            <p className="mb-4">I'm always striving for more, but beyond that, I love to play with API's.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  {/* End Title */}
-
-  {/* Grid */}
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-    <div className="text-center">
-      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/119341956?v=4" alt="Avatar" />
-      <div className="mt-2 sm:mt-4">
-        <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
-          Ayush Indapure
-        </h3>
-        <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-          Front-end Developer
-        </p>
-      </div>
-    </div>
-    {/* End Col */}
-
-    <div className="text-center">
-      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/77894439?v=4" alt="Avatar" />
-      <div className="mt-2 sm:mt-4">
-        <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
-          Joseph Joestar
-        </h3>
-        <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-          AI Engineer
-        </p>
-      </div>
-    </div>
-    {/* End Col */}
-
-    <div className="text-center">
-      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://avatars.githubusercontent.com/u/62185049?v=4" alt="Avatar" />
-      <div className="mt-2 sm:mt-4">
-        <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
-          Parth Vaghela
-        </h3>
-        <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-          Backend Developer
-        </p>
-      </div>
-    </div>
-    {/* End Col */}
-
-    <div className="text-center">
-      <Image className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://i.ibb.co/W4qbVgLc/Screenshot-2025-03-28-at-8-57-19-PM.png" alt="Avatar" />
-      <div className="mt-2 sm:mt-4">
-        <h3 className="text-sm font-medium text-white sm:text-base lg:text-lg">
-          Gaurav Myana
-        </h3>
-        <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-          3d / VFX Artist
-        </p>
-      </div>
-    </div>
-    {/* End Col */}
-
-
-  </div>
-  {/* End Grid */}
-</div>
+</section>
 {/* End Team */}
     </div>
   )

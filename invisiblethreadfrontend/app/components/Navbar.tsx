@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div>
         {/* ========== HEADER ========== */}
-<header className="fixed top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-5xl before:mx-2 lg:before:mx-auto before:rounded-full before:bg-neutral-300/20 before:backdrop-blur-md">
+<header className="fixed top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-5xl before:mx-2 lg:before:mx-auto before:rounded-lg sm:before:rounded-full before:bg-neutral-300/20 before:backdrop-blur-md">
   <nav className="relative  max-w-5xl w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
     <div className="flex items-center justify-between">
       <div className="flex items-center">
